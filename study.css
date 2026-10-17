@@ -1,0 +1,82 @@
+/* Deeper studying: each checkpoint's study steps, today's lesson, active-recall flashcards and "think deeper" questions. */
+.guide .ds-head { margin: 18px 0 8px; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.guide ol.day-steps { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 8px; }
+.guide ol.day-steps li { margin: 0; }
+button.day-step { display: flex; align-items: center; gap: 14px; width: 100%; padding: 12px 14px; text-align: left; font-size: 1rem; color: var(--ink);
+                  background: var(--field); border: 1.5px solid var(--line); border-radius: 12px; }
+button.day-step:hover { filter: none; border-color: var(--accent); }
+button.day-step.next { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,179,159,.15); }
+.ds-num { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border-radius: 50%; font-size: .9rem; color: var(--accent); border: 1.5px solid var(--accent); }
+.day-step.done .ds-num { color: #06201a; background: var(--accent); }
+.ds-text { flex: 1; min-width: 0; }
+.ds-text b { display: block; font-weight: 400; font-size: 1.08rem; color: #fff; }
+.ds-text small { display: block; font-size: .88rem; line-height: 1.4; color: var(--muted); }
+.day-step.done .ds-text b { color: var(--muted); }
+.ds-go { flex: none; padding: 3px 12px; border-radius: 999px; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); }
+.day-step.next .ds-go { color: #06201a; background: var(--accent); border-color: var(--accent); }
+.day-step.done .ds-go { color: var(--accent); border-color: rgba(79,179,159,.5); }
+button.cp-check.locked { opacity: .6; border-style: dotted; border-color: var(--line); }
+button.cp-check.locked .cp-box { border-color: var(--line); }
+button.back-steps { margin: 0 0 14px; padding: 7px 14px; font-size: .9rem; }
+.today-panel { margin-top: 6px; }
+
+/* Today's lesson */
+.lesson-sec { margin: 0 0 16px; }
+.guide h4.lesson-h { margin: 0 0 4px; font-weight: 400; font-size: 1.15rem; color: #fff; }
+.lesson-sec p { line-height: 1.7; }
+.worked { margin: 18px 0; padding: 16px 18px; border: 1px solid rgba(126,196,230,.4); border-radius: 14px; background: rgba(126,196,230,.07); }
+.guide .worked-tag { margin: 0 0 4px; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-blue); }
+.guide .worked-problem { margin: 0 0 8px; color: #fff; }
+.guide .worked-how { margin: 0 0 8px; font-size: .88rem; color: var(--muted); }
+.guide ol.worked-steps { margin: 0 0 10px; padding-left: 22px; }
+.worked-steps li { animation: rise .3s ease; }
+.guide .worked-answer { margin: 0 0 10px; padding: 8px 12px; border-radius: 10px; color: #c9f2e6; background: rgba(79,179,159,.14); }
+.lesson-why { margin: 0 0 16px; padding: 12px 14px; border-left: 3px solid #ffd166; border-radius: 0 10px 10px 0; background: rgba(255,209,102,.07); }
+.lesson-why b { font-weight: 400; color: #ffd166; }
+.takeaways { margin: 0 0 18px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--field); }
+.takeaways .worked-tag { color: var(--accent); }
+
+/* Flashcards: type your answer first */
+.guess-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 10px 0 0; }
+.guess-row[hidden] { display: none; }
+input.card-guess { flex: 1 1 240px; min-width: 0; padding: 10px 14px; font-size: 1rem; }
+.guess-row .btn-sm { padding: 10px 16px; font-size: .95rem; }
+.card-yours { margin: 10px 0 0; text-align: center; color: var(--muted); font-size: .95rem; }
+.card-yours:empty { display: none; }
+
+/* Worksheet: think deeper */
+.ws .deeper { margin: 10px 0 2px; padding: 12px 14px; border: 1px dashed rgba(126,196,230,.45); border-radius: 12px; background: rgba(126,196,230,.05); }
+.ws .deeper.full { border-color: rgba(79,179,159,.6); background: rgba(79,179,159,.08); }
+.ws .deeper.part { border-color: rgba(255,209,102,.5); }
+.ws .deeper.miss { border-color: rgba(255,138,128,.5); }
+.ws .deeper-tag { margin: 0; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-blue); }
+.ws .deeper-q { margin: 2px 0 8px; color: #fff; }
+.ws .deeper textarea.test-answer { min-height: 64px; margin-bottom: 8px; }
+.ws .deeper .test-fb { margin-top: 8px; }
+@media (max-width: 560px) { button.day-step { padding: 10px; gap: 10px; } .ds-go { display: none; } .worked { padding: 14px 12px; } }
+@media print { .ds-head, .day-steps { display: none; } }
+
+/* Sprout AI: screenshots in the chat */
+.chat { position: relative; }
+button.chat-attach { width: 48px; height: 48px; flex: none; padding: 0; display: grid; place-items: center; color: var(--muted); background: var(--field); border: 1px solid var(--line); border-radius: 10px; }
+button.chat-attach:hover { filter: none; color: #fff; border-color: var(--accent); }
+button.chat-attach svg { width: 22px; height: 22px; }
+.chat-shots { display: flex; flex-wrap: wrap; gap: 10px; padding: 12px 14px 0; border-top: 1px solid var(--line); background: rgba(0,0,0,.12); }
+.chat-shots[hidden] { display: none; }
+.chat-shots + .chat-form { border-top: 0; }
+.shot { position: relative; width: 72px; height: 72px; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--field); }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.shot button { position: absolute; top: 3px; right: 3px; width: 22px; height: 22px; padding: 0; display: grid; place-items: center; font-size: 14px; line-height: 1; color: #fff; background: rgba(0,0,0,.65); border: 0; border-radius: 50%; }
+.shot.loading::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.4); }
+.msg .shots { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; justify-content: flex-end; }
+.msg .shots img { max-width: 220px; max-height: 180px; border-radius: 10px; border: 1px solid rgba(255,255,255,.25); display: block; cursor: zoom-in; }
+.msg .shots img.big { max-width: 100%; max-height: none; cursor: zoom-out; }
+.msg.me .txt:empty { display: none; }
+.msg.me .col { display: flex; flex-direction: column; align-items: flex-end; min-width: 0; }
+.chat-drop { position: absolute; inset: 0; z-index: 5; display: none; place-items: center; background: rgba(12,26,30,.93); border: 3px dashed var(--accent); border-radius: 20px; color: #fff; font-size: 1.2rem; pointer-events: none; }
+.chat.dragging .chat-drop { display: grid; }
+.chat-note { padding: 6px 18px 0; font-size: 0.85rem; color: #ffb4ab; }
+.msg .txt .cursor { display: inline-block; width: 7px; height: 1em; margin-left: 2px; vertical-align: -2px; background: var(--accent); animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (max-width: 560px) { button.chat-attach { width: 44px; height: 44px; } .msg .shots img { max-width: 160px; } }
+@media (prefers-reduced-motion: reduce) { .msg .txt .cursor { animation: none; } }

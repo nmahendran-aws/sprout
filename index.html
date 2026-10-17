@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprout: grow your knowledge, one day at a time</title>
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="sprout.css">
+<link rel="stylesheet" href="study.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span><span class="a4"></span></div>
+<div class="bubbles" id="bubbles" aria-hidden="true"></div>
+<div class="keys" id="keys" aria-hidden="true"></div>
+<div class="byline">
+  <span>Made by Aarath Mahendran &ndash; <a href="#about">About me</a></span>
+  <span class="status">
+    <button type="button" class="pill gift-pill" id="gift-btn" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2" fill="#ff7ac8"/><rect x="2" y="7" width="20" height="4" rx="1.5" fill="#ff5fa2"/><rect x="11" y="7" width="2" height="14" fill="#ffd166"/><path d="M12 7c-2-4-6-4-6-1 0 1 2 1 6 1zM12 7c2-4 6-4 6-1 0 1-2 1-6 1z" fill="#ffd166"/></svg><span>Daily reward</span></button>
+    <span class="pill streak-pill" id="streak-pill" title="Days in a row you've studied"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-4 2-5 0 2 1 3 2 3 0-3-1-6 1-9z" fill="#ff9f43"/><path d="M12 12c1 2 3 3 3 5a3 3 0 0 1-6 0c0-1 1-2 1-3 1 1 2 0 2-2z" fill="#ffd166"/></svg><b id="streak-n">0</b>&nbsp;day streak</span>
+    <a class="pill bal-pill" href="#shop" title="Your sprouts"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 36V20" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M20 22C20 13 13 8 5 9c0 9 6 14 15 13z" fill="currentColor"/><path d="M20 18c0-8 6-13 15-12 0 9-6 14-15 12z" fill="currentColor" fill-opacity=".7"/></svg><b id="bal-n">0</b></a>
+  </span>
+</div>
+<header class="nav">
+  <a class="brand" href="#">
+  <svg viewBox="0 0 40 40" aria-hidden="true">
+    <path d="M20 36V20" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M20 22C20 13 13 8 5 9c0 9 6 14 15 13z" fill="#fff"/>
+    <path d="M20 18c0-8 6-13 15-12 0 9-6 14-15 12z" fill="#fff" fill-opacity=".7"/>
+  </svg>
+  Sprout
+  </a>
+  <nav class="navlinks">
+    <a class="navlink" href="#start">Try Sprout</a>
+    <span class="navdot" aria-hidden="true">&middot;</span>
+    <a class="navlink" href="#seeds">My Seeds</a>
+    <span class="navdot" aria-hidden="true">&middot;</span>
+    <a class="navlink" href="#garden">Garden</a>
+    <span class="navdot" aria-hidden="true">&middot;</span>
+    <a class="navlink" href="#shop">Shop</a>
+    <span class="navdot" aria-hidden="true">&middot;</span>
+    <a class="navlink" href="#ai">Sprout AI</a>
+  </nav>
+</header>
+
+<div id="home-view">
+<section class="landing">
+  <p class="eyebrow reveal" data-d="0">Your AI study companion</p>
+  <h1 class="reveal" data-d="0.1">Grow your knowledge, one day at a time.</h1>
+  <p class="sub reveal" data-d="0.2">Sprout turns any topic and deadline into a focused study guide, then helps you learn it step by step. Tell it what you're preparing for, and it does the planning.</p>
+  <a class="cta reveal" data-d="0.3" href="#start">Start Planting</a>
+</section>
+
+<section class="features" aria-labelledby="features-title">
+  <h2 id="features-title" class="reveal">What Sprout does</h2>
+  <p class="lead reveal" data-d="0.1">Built for students and anyone learning something new, whether you have a day or a month.</p>
+  <div class="grid">
+    <div class="card reveal"><div class="preview" data-demo="guide"><b>Cellular respiration</b><div class="sec">Key concepts</div><button type="button" class="pv-btn pv-row" data-exp="Glucose splits into two pyruvate in the cytoplasm, netting 2 ATP."><span class="dot"></span>Glycolysis</button><button type="button" class="pv-btn pv-row" data-exp="Pyruvate is broken down in the mitochondria, releasing CO2."><span class="dot"></span>Krebs cycle</button><button type="button" class="pv-btn pv-row" data-exp="Uses oxygen to make most of the cell's ATP."><span class="dot"></span>Electron transport chain</button><small class="pv-exp" aria-live="polite">Tap a concept to see what it means.</small><span class="try">try it</span></div><span class="tag live">Beta</span><h3>One-page study guides</h3><p>Any topic, boiled down to key concepts, formulas to know, and common mistakes.</p></div>
+    <div class="card reveal"><div class="preview" data-demo="plan"><ol class="tl"><li class="done"><button type="button" class="pv-btn" aria-pressed="true"><b>Day 1</b><small>Glycolysis</small></button></li><li class="done"><button type="button" class="pv-btn" aria-pressed="true"><b>Day 2</b><small>The Krebs cycle</small></button></li><li><button type="button" class="pv-btn" aria-pressed="false"><b>Day 3</b><small>Electron transport chain</small></button></li><li><button type="button" class="pv-btn" aria-pressed="false"><b>Day 4</b><small>Practice and review</small></button></li></ol><span class="try">tap a day</span></div><span class="tag live">Beta</span><h3>Day-by-day study plans</h3><p>Your time frame, from one day to one month, broken into focused daily goals.</p></div>
+    <div class="card reveal"><div class="preview" data-demo="sheet"><b>Worksheet: Glycolysis</b><div class="pv-row"><span class="ck">&#10003;</span>Where does it occur?</div><div class="ans">Cytoplasm</div><div class="pv-row"><span class="ck off">&#10003;</span>Name the end product.</div><input class="ans pv-input" type="text" placeholder="Type it, then press Enter" aria-label="Name the end product of glycolysis" autocomplete="off"><small class="pv-fb" aria-live="polite"></small><span class="try">try it</span></div><span class="tag live">Beta</span><h3>Guided worksheets</h3><p>Fill in answers as you go and get each one checked right away.</p></div>
+    <div class="card reveal"><div class="preview" data-demo="quiz"><small class="pv-fb" aria-live="polite">Question 3 of 5</small><b style="margin-top:4px">Where is the Krebs cycle?</b><button type="button" class="pv-btn opt">Cytoplasm</button><button type="button" class="pv-btn opt" data-right="1">Mitochondrial matrix</button><button type="button" class="pv-btn opt">Cell membrane</button><span class="try">pick one</span></div><span class="tag live">Beta</span><h3>Adaptive quizzes</h3><p>Short checks after each section that zero in on what you missed.</p></div>
+    <div class="card reveal"><div class="preview" data-demo="cards"><div class="fc back"></div><button type="button" class="pv-btn fc front" aria-label="Flip the flashcard"><span><small class="fc-side">Flashcard</small><br><span class="fc-text">What does ATP stand for?</span><br><small class="fc-hint">Tap to flip</small></span></button><span class="try">tap the card</span></div><span class="tag live">Beta</span><h3>Flashcards</h3><p>Generated automatically from the material you're studying.</p></div>
+    <div class="card reveal"><div class="preview" data-demo="progress"><b>Your progress</b><button type="button" class="pv-btn pv-row" aria-pressed="true"><span class="ck">&#10003;</span>Glycolysis</button><button type="button" class="pv-btn pv-row" aria-pressed="true"><span class="ck">&#10003;</span>The Krebs cycle</button><button type="button" class="pv-btn pv-row" aria-pressed="false"><span class="ck off">&#10003;</span>Electron transport chain</button><div class="prog"><i></i></div><small class="pv-count">2 of 3 complete</small><span class="try">tap a topic</span></div><span class="tag live">Beta</span><h3>Progress tracking</h3><p>See how far you've come, from the first day to exam day.</p></div>
+    <div class="card reveal wide"><div class="preview" data-demo="grow" tabindex="0" role="button" aria-label="Water the plant to grow it"><span class="try">tap to grow</span><div class="stg" style="--i:0"><div class="bubble">Just planted!</div><svg viewBox="0 0 60 80" aria-hidden="true"><path d="M6 73H54" stroke="#2a3f45" stroke-width="2" stroke-linecap="round"/><ellipse cx="30" cy="68" rx="6.5" ry="4.5" fill="#8a6a4a"/><path d="M26 66q4-3 8 0" stroke="#b08a63" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg><span>Seed</span></div><div class="stg" style="--i:1"><div class="bubble">Keep growing!</div><svg viewBox="0 0 60 80" aria-hidden="true"><path d="M6 73H54" stroke="#2a3f45" stroke-width="2" stroke-linecap="round"/><path d="M30 73V56" stroke="#2f8f7c" stroke-width="3" stroke-linecap="round"/><ellipse cx="24" cy="55" rx="6" ry="3.4" fill="#4fb39f" transform="rotate(-28 24 55)"/><ellipse cx="36" cy="52" rx="6" ry="3.4" fill="#4fb39f" transform="rotate(28 36 52)"/></svg><span>Sprout</span></div><div class="stg" style="--i:2"><div class="bubble">Your roots are getting strong.</div><svg viewBox="0 0 60 80" aria-hidden="true"><path d="M6 73H54" stroke="#2a3f45" stroke-width="2" stroke-linecap="round"/><path d="M30 73V40" stroke="#2f8f7c" stroke-width="3" stroke-linecap="round"/><ellipse cx="23" cy="56" rx="6" ry="3.4" fill="#4fb39f" transform="rotate(-25 23 56)"/><ellipse cx="37" cy="50" rx="6" ry="3.4" fill="#4fb39f" transform="rotate(25 37 50)"/><ellipse cx="23" cy="44" rx="6" ry="3.4" fill="#4fb39f" transform="rotate(-25 23 44)"/><ellipse cx="37" cy="38" rx="6" ry="3.4" fill="#4fb39f" transform="rotate(25 37 38)"/><circle cx="30" cy="36" r="4" fill="#4fb39f"/></svg><span>Seedling</span></div><div class="stg" style="--i:3"><div class="bubble">Branching out nicely!</div><svg viewBox="0 0 60 80" aria-hidden="true"><path d="M6 73H54" stroke="#2a3f45" stroke-width="2" stroke-linecap="round"/><rect x="28.0" y="38" width="4" height="35" rx="1.5" fill="#8a6a4a"/><circle cx="30" cy="30" r="11" fill="#4fb39f"/><circle cx="24" cy="36" r="6" fill="#2f8f7c"/><circle cx="37" cy="35" r="6" fill="#2f8f7c"/></svg><span>Sapling</span></div><div class="stg" style="--i:4"><div class="bubble">You're flourishing!</div><svg viewBox="0 0 60 80" aria-hidden="true"><path d="M6 73H54" stroke="#2a3f45" stroke-width="2" stroke-linecap="round"/><rect x="27.0" y="32" width="6" height="41" rx="1.5" fill="#8a6a4a"/><circle cx="30" cy="24" r="14" fill="#4fb39f"/><circle cx="19" cy="33" r="9" fill="#2f8f7c"/><circle cx="41" cy="33" r="9" fill="#2f8f7c"/></svg><span>Young tree</span></div><div class="stg last" style="--i:5"><div class="bubble">Fully grown!</div><svg viewBox="0 0 60 80" aria-hidden="true"><path d="M6 73H54" stroke="#2a3f45" stroke-width="2" stroke-linecap="round"/><rect x="25.0" y="32" width="10" height="41" rx="1.5" fill="#8a6a4a"/><path d="M30 48l-10-8M30 44l10-9" stroke="#8a6a4a" stroke-width="3" stroke-linecap="round"/><circle cx="30" cy="19" r="17" fill="#4fb39f"/><circle cx="14" cy="31" r="12" fill="#2f8f7c"/><circle cx="46" cy="31" r="12" fill="#2f8f7c"/><circle cx="30" cy="32" r="11" fill="#4fb39f"/></svg><span>Full tree</span></div></div><span class="tag live">Beta</span><h3>Watch your knowledge grow</h3><p>Every study session grows your own plant. You start as a simple seed, then move through six stages, from sprout to a full tree, as you finish days, worksheets, and quizzes. Along the way, Sprout cheers you on with messages like &quot;Keep growing!&quot; and &quot;You're flourishing!&quot;</p></div>
+  </div>
+</section>
+
+
+
+<main id="start">
+  <div class="hero reveal" id="hero">
+    <h2 class="tool-title">What are you studying?</h2>
+    <p class="sub">Grow your knowledge, one day at a time. Tell us your topic and how long you have, and we'll build your plan.</p>
+  </div>
+
+  <form id="plan-form" class="reveal" data-d="0.1" novalidate>
+    <div class="usage" id="usage" aria-live="polite">
+      <span class="pips" aria-hidden="true"><span class="pip"></span><span class="pip"></span><span class="pip"></span></span>
+      <span id="usage-text"></span>
+    </div>
+    <p class="lock-note" id="lock-note" hidden>You've used your 3 free plans. Sprout Premium, with unlimited plans, is coming soon.</p>
+
+    <div class="field">
+      <label for="topic">Topic</label>
+      <p class="hint">A subject, a unit, or an exam you're preparing for.</p>
+      <input type="text" id="topic" placeholder="Organic chemistry, Macroeconomics, Spanish verbs..." autocomplete="off">
+    </div>
+
+    <div class="field">
+      <div class="time-top">
+        <span class="label" id="time-label">Time available</span>
+        <p class="time-readout" id="time-readout" aria-live="polite">1 week</p>
+      </div>
+      <input type="range" id="time" min="0" max="1000" step="1" value="500" aria-labelledby="time-label">
+      <div class="stops" aria-hidden="true">
+        <span>1 day</span><span>3 days</span><span>1 week</span><span>2 weeks</span><span>1 month</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="details">What do you need to learn?</label>
+      <p class="hint">Paste your agenda, syllabus, or a list of what the exam covers.</p>
+      <textarea id="details" placeholder="Unit 4: Cellular respiration&#10;Glycolysis, the Krebs cycle, the electron transport chain..."></textarea>
+    </div>
+
+    <div class="field">
+      <span class="label">Or snap a photo of it</span>
+      <p class="hint">Upload a photo of your syllabus, notes, or study sheet (or a PDF), and Sprout will read it for you.</p>
+      <label class="upload" id="upload-box">
+        <input type="file" id="upload" accept="image/*,application/pdf">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span id="upload-text">Choose a photo or PDF</span>
+      </label>
+      <div class="upload-chosen" id="upload-chosen" hidden>
+        <img id="upload-thumb" alt="" hidden>
+        <span id="upload-name"></span>
+        <button type="button" class="btn-sm secondary" id="upload-clear">Remove</button>
+      </div>
+    </div>
+
+    <button type="submit">Create my plan</button>
+    <p class="error" id="error" role="alert"></p>
+  </form>
+
+</main>
+
+<section id="about" class="about">
+  <div class="about-card reveal">
+    <p class="eyebrow">About me</p>
+    <h2>Hello, I'm Aarath.</h2>
+    <p>I created Sprout to help people study and prepare for the big moments in their lives. I'm a 7th grader and a dedicated self-learner, and outside of my studies I enjoy soccer, biking, and spending time with friends. I'm still figuring things out along the way, but I hope that one day I can accomplish something meaningful.</p>
+    <p>When I'm not studying, I'm usually programming. I love coding and building things like Sprout, because it lets me turn an idea into something real that other people can use. I've always loved math, and I'm curious about how things work on the inside, whether it's a computer, a machine, or the human body. I'm also a huge soccer fan. I cheer for FC Barcelona and watch as many of their matches as I can, and I love playing the game myself with my friends.</p>
+    <p>My dream is to become a neurosurgeon, motivated by a simple purpose: to help people. I'm curious about medical internships, math, science, history, and just about everything else. I've taken part in several local events, including MathCounts and National History Day, and I'm now preparing for bigger ones.</p>
+    <p class="signoff">I hope you enjoy Sprout.</p>
+    <a class="about-more" href="https://claude.ai/artifact/GqRdfo7jpgWupw8p8rP818" target="_blank" rel="noopener">learn more about sprout and me &rarr;</a>
+  </div>
+</section>
+
+</div>
+
+
+
+<section id="study-view" class="study" hidden>
+  <div class="study-top"><a class="back-link" href="#start">&larr; Make a new plan</a></div>
+  <div class="guide" id="guide-card">
+    <p class="eyebrow">Step 1 &middot; Read your study guide</p>
+    <div id="guide-body"></div>
+    <div class="actions">
+      <button type="button" id="read-btn">I've read it. Show my checklist</button>
+      <button type="button" class="secondary" id="print-btn">Print or save as PDF</button>
+      <button type="button" class="secondary ask-ai" id="ask-ai-btn">Ask Sprout AI</button>
+    </div>
+  </div>
+  <div class="guide planbox" id="plan">
+    <p class="eyebrow">Step 2 &middot; Your checklist</p>
+    <h2>One checkpoint at a time</h2>
+    <div class="plant-row">
+      <div class="plant" id="plant"></div>
+      <div class="plan-head">
+        <div class="bubble" id="plant-msg"></div>
+        <p class="meta" id="plan-count"></p>
+        <div class="prog"><i id="plan-bar" style="width:0"></i></div>
+      </div>
+    </div>
+    <div class="path-dots" id="path-dots" aria-hidden="true"></div>
+    <div class="checkpoint" id="checkpoint" aria-live="polite"></div>
+  </div>
+  <div class="guide planbox" id="chooser-card">
+    <p class="eyebrow">Step 3 &middot; Extra practice</p>
+    <div id="choices">
+      <h2>Want to go further?</h2>
+      <p class="hint">Use these any time to practice the whole unit. They don't check anything off, but they help a lot before checks and the unit test.</p>
+      <div class="choices">
+        <button type="button" class="choice" data-act="cards"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="24" height="30" rx="4" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(-10 18 27)"/><rect x="17" y="7" width="24" height="30" rx="4" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width="2.5"/></svg><b>Flashcards</b><span>Type each answer from memory, flip to check, then sort it into &ldquo;Got it&rdquo; or &ldquo;Still learning.&rdquo;</span><small></small></button>
+        <button type="button" class="choice" data-act="sheet"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 5h17l8 8v30H12z" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M18 20h13M18 27h5M27 27h4M18 34h13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><b>Guided worksheet</b><span>Your study guide with blanks, &ldquo;think deeper&rdquo; questions, and Sprout AI tutoring you along the way.</span><small></small></button>
+        <button type="button" class="choice" data-act="quiz"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width="2.5"/><path d="M19 19a5 5 0 1 1 7 4.6c-1.3.6-2 1.6-2 3V28" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="24" cy="34" r="1.8" fill="currentColor"/></svg><b>Quiz</b><span>Questions that apply what you learned to new situations, then practice what you missed.</span><small></small></button>
+      </div>
+    </div>
+    <div id="activity" hidden>
+      <div class="activity-head"><button type="button" class="btn-sm secondary" id="activity-back">&larr; Back to choices</button><h2 id="activity-title"></h2></div>
+      <div class="panel" id="activity-panel"></div>
+    </div>
+  </div>
+</section>
+
+<section id="check-view" class="study" hidden>
+  <div class="guide exam-card">
+    <p class="eyebrow" id="exam-label">Check your understanding</p>
+    <p class="exam-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M4 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Your study guide is hidden until you finish. No peeking, you've got this!</p>
+    <div class="checkpoint" id="exam-body" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="questions-view" class="questions" hidden>
+  <a class="skip" href="#start">Skip for now</a>
+  <div class="q-head"><h1>Hey! Let's start by asking you some questions.</h1></div>
+  <div class="q-card" id="q-card"></div>
+</section>
+
+<section id="seeds-view" class="seeds" hidden>
+  <div class="seeds-head">
+    <h1>My Seeds</h1>
+    <p class="sub">Every study plan you've planted, and how far it has grown.</p>
+  </div>
+  <div id="seeds-empty" class="seeds-empty">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="54" fill="rgba(79,179,159,.12)"/>
+      <path d="M24 88Q60 76 96 88" stroke="#2a3f45" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <g transform="rotate(-18 60 68)"><ellipse cx="60" cy="68" rx="20" ry="13" fill="#8a6a4a"/><path d="M43 68q17-9 34 0" stroke="#b08a63" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+    </svg>
+    <p>You haven't made any seeds yet. A seed is any of your study plans you have created. Start planting!</p>
+  </div>
+  <div id="seeds-list" class="seeds-list"></div>
+</section>
+
+<section id="garden-view" class="garden-page" hidden>
+  <div class="seeds-head">
+    <h1>My Garden</h1>
+    <p class="sub" id="garden-sub">Every plan you finish plants its tree here.</p>
+  </div>
+  <div class="garden" id="garden">
+    <div class="garden-sky" aria-hidden="true"><span class="sun"></span><span class="cloud c1"></span><span class="cloud c2"></span></div>
+    <div class="garden-plots" id="garden-plots"></div>
+    <div class="garden-ground" aria-hidden="true"></div>
+  </div>
+  <div class="garden-stats" id="garden-stats"></div>
+  <div id="garden-empty" class="seeds-empty" hidden>
+    <p>Your garden is empty for now. Finish every step of a study plan and its tree gets planted here.</p>
+    <a class="cta" href="#start" style="margin-top:20px">Start Planting</a>
+  </div>
+</section>
+
+<section id="ai-view" class="ai-page" hidden>
+  <div class="seeds-head">
+    <h1>Sprout AI</h1>
+    <p class="sub">Your study helper. Ask it to explain something, quiz you, or help you get unstuck. You can drop or paste a screenshot of a problem, too.</p>
+  </div>
+  <div class="chat">
+    <div class="chat-top"><span id="chat-context">Ask about anything you're studying.</span><button type="button" class="chat-new" id="chat-new">New chat</button></div>
+    <div class="chat-log" id="chat-log" aria-live="polite"></div>
+    <div class="chat-chips" id="chat-chips"></div>
+    <div class="chat-shots" id="chat-shots" hidden></div>
+    <form class="chat-form" id="chat-form" novalidate>
+      <button type="button" class="chat-attach" id="chat-attach" aria-label="Add a screenshot" title="Add a screenshot (or paste or drop one)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="9" cy="10" r="1.8" fill="currentColor"/><path d="M4.5 17l5-5 3.5 3.5 2.5-2.5 4 4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/></svg></button>
+      <input type="file" id="chat-file" accept="image/*" multiple hidden>
+      <textarea id="chat-input" rows="1" maxlength="1500" placeholder="Ask Sprout AI a question..." aria-label="Message Sprout AI"></textarea>
+      <button type="submit" id="chat-send">Send</button>
+    </form>
+    <div class="chat-drop" id="chat-drop" aria-hidden="true"><span>Drop your screenshot here</span></div>
+  </div>
+  <p class="chat-foot" id="chat-foot"></p>
+</section>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title" id="modal-card"></div>
+</div>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<section id="shop-view" class="shop" hidden>
+  <div class="shop-top">
+    <div class="wallet" title="Your sprouts" aria-live="polite">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 36V20" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M20 22C20 13 13 8 5 9c0 9 6 14 15 13z" fill="currentColor"/><path d="M20 18c0-8 6-13 15-12 0 9-6 14-15 12z" fill="currentColor" fill-opacity=".7"/></svg>
+      <span id="wallet-amount">0</span>&nbsp;<span class="wallet-label">sprouts</span>
+    </div>
+  </div>
+  <div class="seeds-head">
+    <h1>Shop</h1>
+    <p class="sub">Choose the tree you grow. Every study plan grows the tree you have equipped.</p>
+    <p class="earn">Earn sprouts by studying: <b>+100</b> for each new plan, <b>+50</b> for each plan step, and <b>+10</b> for each right answer. <b>Rarer trees grow more sprouts:</b> the tree you have equipped adds its bonus to every sprout you earn by studying.</p>
+  </div>
+  <div id="shop-list" class="shop-list"></div>
+</section>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer>Sprout</footer>
+
+<div class="music" id="music">
+  <button type="button" id="music-btn" aria-pressed="true" aria-label="Mute music" title="Mute music">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="currentColor"/><circle cx="16.5" cy="16" r="2.5" fill="currentColor"/><line class="slash" x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+  </button>
+  <input type="range" id="music-vol" min="0" max="100" value="100" aria-label="Music volume">
+</div>
+
+<script src="js/core.js"></script>
+<script src="js/checkpoints.js"></script>
+<script src="js/practice.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/rewards.js"></script>
+<script src="js/app.js"></script>
+<script src="js/music.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
